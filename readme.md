@@ -60,3 +60,13 @@ This system traverses existing reservations and tags campsites that either:
 * have start or end dates that have a gap that voilates the global gap rules
 
 After identifying the conflicting campsites, the remaining campsites are implicitly available.
+
+## Assumptions
+* Reservation end dates represent the last night stayed, the actual checkout day is the following day.
+* The input JSON file conforms to the Data interface (enforced for tests).
+
+## Future Optimizations
+Optimizing was done for the use case of a simple JSON file.  As the list of existing 
+reservations grows, some performance tuning could be applied:
+* Presort reservations by ascending end date, then perform a binary search and skip 
+end dates whose (date + gap) is before the searched start date.
