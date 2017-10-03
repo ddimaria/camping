@@ -1,4 +1,4 @@
-import { Data } from '../src/data';
+import { Data } from '../src/models';
 
 export let data: Data = JSON.parse(`
 {

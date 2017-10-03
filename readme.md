@@ -61,6 +61,10 @@ This system traverses existing reservations and tags campsites that either:
 
 After identifying the conflicting campsites, the remaining campsites are implicitly available.
 
+While ES2015 classes are used, the Camping class has no state, which reduces runtime
+errors and help ensure function purity.  All methods are full testable, and code coverage
+is at 100%.
+
 ## Assumptions
 * Reservation end dates represent the last night stayed, the actual checkout day is the following day.
 * The input JSON file conforms to the Data interface (enforced for tests).
