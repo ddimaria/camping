@@ -52,3 +52,11 @@ To build minified production bundles:
 npm run build:prod
 ```
 The js and css bundles will appear in the `/dist` folder
+
+## The Approach
+Reservation systems need to prevent gaps in their reservation grids to maximize revenue.
+This system traverses existing reservations and tags campsites that either:
+* have dates that coincide with the search dates, or
+* have start or end dates that have a gap that voilates the global gap rules
+
+After identifying the conflicting campsites, the remaining campsites are implicitly available.
